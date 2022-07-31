@@ -13,8 +13,6 @@ const Layout = ( {children, title} ) => {
         navigate('/login')
     }
 
-    console.log('mobiele', mobile)
-
     return ( 
         <Container maxWidth="false" sx={{background:'#000'}}>
             <Box component="header" sx={{width:'100%', height:' 90px', display:'flex', alignItems:'center'}}>
