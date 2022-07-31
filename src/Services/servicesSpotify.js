@@ -2,7 +2,7 @@ import axios from "axios"
 import { getAPIClient } from "./api"
 
 const endpoint = 'https://accounts.spotify.com/authorize'
-const clientID = '9498835655ad429db684d77eca7eac73'
+const clientID = 'xxxxxxxxxxxx'
 const redirectUri = 'http://localhost:3000/'
 const scopes = [
     'user-modify-playback-state',
