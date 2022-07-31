@@ -1,0 +1,140 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;;
+    margin: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+.textTitle {
+    font-size: 60px;
+    font-weight: 700;
+}
+
+.textInfo {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.button {
+    font-size: 16px;
+    font-weight: 600;
+}
+/* Login */
+
+.logo {
+    width:'464px'
+}
+
+.principalColor {
+    color: #D6F379
+}
+
+.container {
+    padding-left: 80px;
+}
+.container .button {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    cursor: pointer
+}
+.containerImg {
+    display: flex;
+    justify-content: end;
+    padding-left: 80px;
+}
+
+/*  */
+
+
+/* LAYOUT */
+
+.textNav {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/*  */
+
+/* Albums */
+
+.containerCard {
+    border-radius: 24px;
+    min-height: 450px;
+    cursor: pointer;
+    padding: 16px;
+    overflow: hidden;
+}
+
+.containerCard:hover {
+    background-color: #D6F379;
+}
+
+.titleCard {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+/*  */
+
+/* Artist */
+
+.artistTitle {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.containerCardArtist {
+    border-radius: 24px;
+    min-height: 450px;
+    padding: 16px;
+    overflow: hidden;
+}
+
+/*  */
+
+
+@media (max-width: 1200px) {
+    .logo {
+        width: 318px
+    }
+    .container {
+        padding-left: 80px;
+    }
+    .containerImg {
+        padding-left: 80px;
+        display: flex;
+        justify-content: start;
+    }
+}
+
+@media (max-width: 500px) {
+    .logo {
+        width: 222px
+    }
+    .container {
+        padding: 0;
+        display: flex;
+        text-align: center;
+    }
+    .container .button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .containerImg {
+        padding: 0;
+        display: flex;
+        justify-content: center;
+    }
+    .textTitle {
+        font-size: 40px;
+    }
+}
