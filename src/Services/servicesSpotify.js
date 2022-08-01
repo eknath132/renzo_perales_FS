@@ -1,7 +1,7 @@
 import { getAPIClient } from "./api"
 
 const endpoint = 'https://accounts.spotify.com/authorize'
-const clientID = 'xxxxxxxxxxx'
+const clientID = 'xxxxxx'
 const redirectUri = 'http://localhost:3000/'
 const scopes = [
     'user-modify-playback-state',
