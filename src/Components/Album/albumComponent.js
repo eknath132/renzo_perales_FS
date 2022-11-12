@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 // MATERIAL
 import { Grid, useMediaQuery } from '@mui/material';
@@ -19,6 +19,10 @@ const AlbumComponent = ( ) => {
     const mobile = useMediaQuery('(max-width:500px)');
 
     const navigate = useNavigate()
+
+    useEffect(() => {
+        window.location.hash = ''
+    },[])
 
     const getArtist = async() => {
       const albumsData  = await SearchAlbumns(inputValue, token)

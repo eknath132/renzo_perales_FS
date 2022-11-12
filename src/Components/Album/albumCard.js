@@ -37,10 +37,10 @@ const AlbumCard = ({images, artist, published, action, getAlbum, albumID, remove
             {action && 
                 <CardActions sx={{position:'absolute', bottom: 0}}>
                     {getVerifyRepeat() 
-                        ?   <Grid onClick={() => removeAlbum(albumID)} sx={{width:'150px', height:'44px', borderRadius:'100px', background: '#E3513D', justifyContent:'center', display:'flex', lineHeight:'44px', color:'#fff', cursor:'pointer'}}>
+                        ?   <Grid item onClick={() => removeAlbum(albumID)} sx={{width:'150px', height:'44px', borderRadius:'100px', background: '#E3513D', justifyContent:'center', display:'flex', lineHeight:'44px', color:'#fff', cursor:'pointer'}}>
                                 - Remove album {getVerifyRepeat()}
                             </Grid>
-                        :   <Grid onClick={() => getAlbum(albumID)} sx={{width:'150px', height:'44px', borderRadius:'100px', background: '#D6F379', justifyContent:'center', display:'flex', lineHeight:'44px', color:'#000', cursor:'pointer'}}>
+                        :   <Grid item onClick={() => getAlbum(albumID)} sx={{width:'150px', height:'44px', borderRadius:'100px', background: '#D6F379', justifyContent:'center', display:'flex', lineHeight:'44px', color:'#000', cursor:'pointer'}}>
                                 + Add album {getVerifyRepeat()}
                             </Grid>
                     }

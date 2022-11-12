@@ -7,32 +7,33 @@ import AlbumCard from '../Album/albumCard';
 const MyAlbumComponent = () => {
 
     const [ albumns, setAlbumns ] = useState([])
+    const [ loading, setLoading ] = useState(true)
     const token = localStorage.getItem('token')
-    const navigate = useNavigate()
     const mobile = useMediaQuery('(max-width:500px)');
+    const navigate = useNavigate()
 
-    const getMyAlbum = useCallback(async() => {
-
+    const getMyAlbum = useCallback(async(token) => {
         const myAlbums = await serviceMe(token) 
-
+    
         if(myAlbums === 401) {
             localStorage.removeItem('token')
-            navigate('/login')
+            // navigate('/login')
         } 
 
         if(myAlbums.length === 0) {
             setAlbumns([])
+            setLoading(!myAlbums)
         } else {
             setAlbumns(myAlbums)
+            setLoading(!myAlbums)
         }
-
-    },[navigate, token])
+    },[])
+    console.log('loading', loading)
 
     useEffect(( ) => {
-
-        getMyAlbum()
-
+        getMyAlbum(token)
     },[getMyAlbum, token])
+
 
     const removeAlbum = async(albumID) => {
         const verifyStatus = await serviceRemoveAlbum([albumID], token)
@@ -87,7 +88,7 @@ const MyAlbumComponent = () => {
                 </Grid>
             }
 
-            {albumns.length === 0  && 
+            {albumns.length === 0 && !loading  && 
                 <Grid item xs={10} container justifyContent={'center'} sx={{margin:'50px auto 0 auto'}} rowSpacing={3}>
                     <Grid item mb={2} sx={{color:'#fff'}}>
                         No tienes albumes guardados

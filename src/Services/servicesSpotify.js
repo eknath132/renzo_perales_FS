@@ -1,7 +1,9 @@
 import { getAPIClient } from "./api"
 
+window.Buffer = window.Buffer || require("buffer").Buffer; 
+
 const endpoint = 'https://accounts.spotify.com/authorize'
-const clientID = 'xxxxxx'
+const clientID = '9498835655ad429db684d77eca7eac73'
 const redirectUri = 'http://localhost:3000/'
 const scopes = [
     'user-modify-playback-state',
@@ -24,9 +26,8 @@ export const LoginURL = `${endpoint}?client_id=${clientID}&response_type=token&r
 const url = 'https://api.spotify.com/v1/'
 
 
-// const token = localStorage.getItem('token')
-
 const api = getAPIClient()
+
 // get album
 export const SearchAlbumns = async(artist, token) => {
     const artistID = await api.get(`${url}search?q=${artist}&type=artist`, {

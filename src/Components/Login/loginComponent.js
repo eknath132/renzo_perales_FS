@@ -7,7 +7,7 @@ import { LoginURL } from '../../Services/servicesSpotify';
 
 const LoginComponent = () => {
 
-    const getLogin =  () => {
+    const getLogin = async() => {
         window.location.replace(LoginURL)
     }
     
